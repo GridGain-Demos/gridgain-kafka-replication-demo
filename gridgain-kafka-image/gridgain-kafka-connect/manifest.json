@@ -1,0 +1,35 @@
+{
+  "name" : "gridgain-kafka-connect",
+  "version" : "8.7.14",
+  "title" : "Kafka Connect GridGain",
+  "description" : "Kafka Connector integrates Kafka with Apache Ignite making it easy to add Apache Ignite to a Kafka pipeline-based system.\n\nKafka Connector is scalable and resilient and takes care of many integration challenges that otherwise would have to be manually addressed if you used Kafka Producer and Consumer APIs directly.",
+  "owner" : {
+    "username" : "gridgain",
+    "type" : "organization",
+    "name" : "GridGain Systems, Inc.",
+    "url" : "https://www.gridgain.com/",
+    "logo" : "assets/gridgain-logo.png"
+  },
+  "support" : {
+    "summary" : "GridGain Systems supports GridGain/Kafka source and sink connectors as part of the GridGain Enterprise and Ultimate editions.",
+    "url" : "https://www.gridgain.com/products/gridgain-products/",
+    "logo" : "assets/gridgain-logo.png",
+    "provider_name" : "GridGain Systems, Inc."
+  },
+  "tags" : [ "ignite", "kafka", "gridgain" ],
+  "features" : {
+    "supported_encodings" : [ "any" ],
+    "single_message_transforms" : true,
+    "confluent_control_center_integration" : true,
+    "kafka_connect_api" : true
+  },
+  "logo" : "assets/gridgain-logo.png",
+  "documentation_url" : "https://docs.gridgain.com/v8.4/docs/certified-kafka-connector",
+  "docker_image" : {
+    "namespace" : "gridgain",
+    "name" : "gridgain-ent",
+    "tag" : "8.7.14"
+  },
+  "component_types" : [ "source", "sink" ],
+  "release_date" : "2020-03-23"
+}

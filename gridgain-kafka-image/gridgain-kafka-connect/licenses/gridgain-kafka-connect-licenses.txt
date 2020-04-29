@@ -1,0 +1,17 @@
+// List of gridgain-kafka-connect module's dependencies provided as a part of this distribution.
+// ------------------------------------------------------------------
+
+==============================================================================
+For ignite-core (http://ignite.apache.org) org.gridgain:ignite-core:jar:8.7.14
+==============================================================================
+This product bundles ignite-core which is available under the following:
+Apache License, Version 2.0. For details, see http://www.apache.org/licenses/LICENSE-2.0.txt.
+
+==============================================================================
+For ignite-spring (http://ignite.apache.org) org.gridgain:ignite-spring:jar:8.7.14
+==============================================================================
+This product bundles ignite-spring which is available under the following:
+Apache License, Version 2.0. For details, see http://www.apache.org/licenses/LICENSE-2.0.txt.
+
+
+
