@@ -1,32 +1,38 @@
 # Changes Replication Between GridGain Clusters With Apache Kafka
 
-The demo shows how to use Apache Kafka for changes replication between two separate GridGain clusters.
+The demo shows how to use Apache Kafka to replicate changes between two separate GridGain clusters with architecture and 
+configuration process covered on this documentation page: https://www.gridgain.com/docs/latest/integrations/kafka/kc-ex-replication.
 
-Architecture and configuration process is described here: https://www.gridgain.com/docs/latest/integrations/kafka/kc-ex-replication. At the same time, this demo has everything configured and it already can be started without any additional steps.
+![changes-replication](images/kc-ex-replicate.png)
+
+This is a ready to be used project that bootstraps GridGain and Kafka Connect clusters with GridGain WebConsole in Docker.
+Just follow the instructions below to get the demo working.
 
 ## Prerequisites
-You have Docker installed. Please use this guide if you don’t have it yet: https://www.docker.com/get-started
 
-## Runnable scripts
-    start.sh starts containers needed for demo.
-    stop.sh stop all containers
+Install Docker if it's installed in your environment yet: https://www.docker.com/get-started
 
-## Containers
-This demo has 4 containers:
+## Start GridGain, Kafka and WebConsole in Docker
 
-    2 Gridgain Enterprise Edition clusters with one server node in both of them (gridgain-source-node, gridgain-sink-node).
+Clone or download this repository and start the demo by running `start.sh` from the root of the project.
 
-    1 Kafka container - (gridgain-kafka) with configured source and sink connectors.
+The script pulls and builds the images as well as deploys the following containers:
 
-    2 WebConsole containers - (gridgain-webconsole-backend) and (gridgain-webconsole-frontend)
+* Two single-node GridGain clusters (`gridgain-source-node` is the container of the first cluster while
+ `gridgain-sink-node` belongs to the second cluster).
+* Two WebConsole containers - `gridgain-webconsole-backend` and `gridgain-webconsole-frontend`.
+* One Kafka container named `gridgain-kafka` with pre-configured source and sink connectors.
 
-Once WebConsole started, you will need to download a webagent and connect it to the cluster. Please add this to the properties file in order to connect to the cluster started in the docker:
+## Start Web Agent to Monitor GridGain Clusters
+
+Once WebConsole started, you will need to download a webagent and connect it to the cluster. 
+Please add this to the properties file in order to connect to the cluster started in the docker:
 
     server-uri=http://localhost
 
     node-uri=http://localhost:6081
 
-Also, to connect to the second cluter, you will need to start another webagent with this configuration:
+Also, to connect to the second cluster, you will need to start another webagent with this configuration:
 
     server-uri=http://localhost
 
@@ -36,14 +42,23 @@ More information about WebAgent configuration can be found in the documentation:
 
 Script downloads Kafka binaries if they are not in the package yet.
 
-## Start-up and verification
-After cloning the repository with demo or downloading it, run start.sh (from the directory with demo) to build and run all docker images.
+## Load Data
 
 After this, run SQL script from insert_data.sql on Source cluster using WebConsole or SQLline from docker image:
 	
-    docker exec -it gridgain-node-1 /bin/bash
+    docker exec -it gridgain-source-node /bin/bash
     bin/sqlline.sh --verbose=true -u jdbc:ignite:thin://localhost:10800
 
 After this, you can check these entries on Sink cluster.
+
+## Check That Changes Were Replicated
+
+TBD
+
+## Stop Demo
+
+Run `stop.sh` script from the project root to stop all the containers.
+
+
 
 
