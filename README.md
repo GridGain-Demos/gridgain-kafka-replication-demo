@@ -44,7 +44,9 @@ Script downloads Kafka binaries if they are not in the package yet.
 
 ## Load Data
 
-After this, run SQL script from insert_data.sql on Source cluster using WebConsole or SQLline from docker image:
+After this, copy SQL script from insert_data.sql and run it from WebConsole:
+
+![sql-page](images/sql_page.png)
 	
     docker exec -it gridgain-source-node /bin/bash
     bin/sqlline.sh --verbose=true -u jdbc:ignite:thin://localhost:10800
@@ -53,12 +55,10 @@ After this, you can check these entries on Sink cluster.
 
 ## Check That Changes Were Replicated
 
-TBD
+Switch to the Sink cluster and check sizes for these caches. 
+
+![caches-monitoring](images/caches_monitoring.png)
 
 ## Stop Demo
 
 Run `stop.sh` script from the project root to stop all the containers.
-
-
-
-
