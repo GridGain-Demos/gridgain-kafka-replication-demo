@@ -1,4 +1,4 @@
-# Changes Replication Between GridGain Clusters With Apache Kafka
+# Changes Replication Between GridGain Clusters With Kafka Connector
 
 The demo shows how to use Apache Kafka to replicate changes between two separate GridGain clusters with architecture and 
 configuration process covered on this documentation page: https://www.gridgain.com/docs/latest/integrations/kafka/kc-ex-replication.
