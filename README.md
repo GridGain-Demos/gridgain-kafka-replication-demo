@@ -34,7 +34,7 @@ More information about WebAgent configuration can be found in the documentation:
 Script downloads Kafka binaries if they are not in the package yet.
 
 ## Prerequisites
-You have Docker installed. Please use this guide if you don’t have it yet: Get started with Docker
+You have Docker installed. Please use this guide if you don’t have it yet: https://www.docker.com/get-started
 
 ## Start-up and verification
 After cloning the repository with demo or downloading it, run start.sh (from the directory with demo) to build and run all docker images.
