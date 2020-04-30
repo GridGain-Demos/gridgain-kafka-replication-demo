@@ -44,12 +44,13 @@ Script downloads Kafka binaries if they are not in the package yet.
 
 ## Load Data
 
-After this, copy SQL script from insert_data.sql and run it from WebConsole:
+Source cluster can be found by checking name of the nodes on monitoring page:
+
+![source-cluster](images/source_cluster.png)
+
+After this, copy SQL script from insert_data.sql and run it from WebConsole on Source cluster:
 
 ![sql-page](images/sql_page.png)
-	
-    docker exec -it gridgain-source-node /bin/bash
-    bin/sqlline.sh --verbose=true -u jdbc:ignite:thin://localhost:10800
 
 After this, you can check these entries on Sink cluster.
 
