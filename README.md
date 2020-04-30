@@ -1,8 +1,11 @@
-# gridgain-kafka-replication-demo
-Real-time replication between GridGain clusters with Apache Kafka
+# Changes Replication Between GridGain Clusters Demo
+
+The demo shows how to use Apache Kafka for changes replication between two separate GridGain clusters.
 
 Architecture and configuration process is described here: https://www.gridgain.com/docs/latest/integrations/kafka/kc-ex-replication. At the same time, this demo has everything configured and it already can be started without any additional steps.
 
+## Prerequisites
+You have Docker installed. Please use this guide if you don’t have it yet: https://www.docker.com/get-started
 
 ## Runnable scripts
     start.sh starts containers needed for demo.
@@ -32,9 +35,6 @@ Also, to connect to the second cluter, you will need to start another webagent w
 More information about WebAgent configuration can be found in the documentation: https://www.gridgain.com/docs/web-console/latest/web-agent-configuration
 
 Script downloads Kafka binaries if they are not in the package yet.
-
-## Prerequisites
-You have Docker installed. Please use this guide if you don’t have it yet: https://www.docker.com/get-started
 
 ## Start-up and verification
 After cloning the repository with demo or downloading it, run start.sh (from the directory with demo) to build and run all docker images.
