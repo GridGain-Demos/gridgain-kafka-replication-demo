@@ -1,4 +1,4 @@
-# Changes Replication Between GridGain Clusters Demo
+# Changes Replication Between GridGain Clusters With Apache Kafka
 
 The demo shows how to use Apache Kafka for changes replication between two separate GridGain clusters.
 
