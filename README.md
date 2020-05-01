@@ -26,7 +26,7 @@ The script pulls and builds the images as well as deploys the following containe
 ## Start Web Agent to Monitor GridGain Clusters
 
 Once WebConsole started, you will need to download a webagent and connect it to the cluster. 
-Please add this to the properties file in order to connect to the cluster started in the docker:
+Please add this to the properties file(default.properties in webagent directory) to connect to the cluster started in the docker:
 
     server-uri=http://localhost
 
@@ -43,6 +43,8 @@ More information about WebAgent configuration can be found in the documentation:
 Script downloads Kafka binaries if they are not in the package yet.
 
 ## Load Data
+
+To load the data, open a WebConsole, it's started on the http://localhost:80.
 
 Source cluster can be found by checking name of the nodes on monitoring page:
 
