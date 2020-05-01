@@ -25,38 +25,47 @@ The script pulls and builds the images as well as deploys the following containe
 
 ## Start Web Agent to Monitor GridGain Clusters
 
-Once WebConsole started, you will need to download a webagent and connect it to the cluster. 
-Please add this to the properties file in order to connect to the cluster started in the docker:
+Once WebConsole started, you will need to download the web agent and connect it with the clusters. Open the following
+address in your browser: http://localhost/
 
-    server-uri=http://localhost
+Download the agent using the button in the bottom left corner of the screen:
 
-    node-uri=http://localhost:6081
+![agent-download](images/agent_download.png)
 
-Also, to connect to the second cluster, you will need to start another webagent with this configuration:
+Open a terminal window, navigate to the web agent root folder and execute the following command that will connect the
+agent with the first cluster:
 
-    server-uri=http://localhost
+`./web-console-agent.sh --server-uri http://localhost --node-uri http://localhost:6081`
+ 
+Open another terminal tab and connect to the second cluster using the following parameters:
 
-    node-uri=http://localhost:6082
+`./web-console-agent.sh --server-uri http://localhost --node-uri http://localhost:6082`
 
-More information about WebAgent configuration can be found in the documentation: https://www.gridgain.com/docs/web-console/latest/web-agent-configuration
+More information about WebAgent configuration can be found on the following documentation page:
+https://www.gridgain.com/docs/web-console/latest/web-agent-configuration
 
-Script downloads Kafka binaries if they are not in the package yet.
 
 ## Load Data
 
-Source cluster can be found by checking name of the nodes on monitoring page:
+The Source cluster can be found by checking the name of the nodes on WebConsole's monitoring screen:
 
 ![source-cluster](images/source_cluster.png)
 
-After this, copy SQL script from insert_data.sql and run it from WebConsole on Source cluster:
+Check the image below for how to locate the clusters switch button:
+
+![clusters-switch](images/clusters_switch.png)
+
+Open to SQL notebooks of the Source cluster, create a new one and execute all the SQL statements from `insert_data.sql` of
+this GitHub project:
 
 ![sql-page](images/sql_page.png)
 
-After this, you can check these entries on Sink cluster.
+Go back to the monitoring screen and check the caches are no longer empty.
 
 ## Check That Changes Were Replicated
 
-Switch to the Sink cluster and check sizes for these caches. 
+Switch to the second cluster (the Sink cluster) to confirm that all the changes inserted into the Source cluster were
+replicated via Kafka Connector:
 
 ![caches-monitoring](images/caches_monitoring.png)
 
