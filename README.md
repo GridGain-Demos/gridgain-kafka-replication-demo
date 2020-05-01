@@ -1,16 +1,16 @@
 # Changes Replication Between GridGain Clusters With Kafka Connector
 
-The demo shows how to use Apache Kafka to replicate changes between two separate GridGain clusters with architecture and 
+The demo shows how to use Apache Kafka to replicate changes between two separate GridGain clusters with the architecture and 
 configuration process covered on this documentation page: https://www.gridgain.com/docs/latest/integrations/kafka/kc-ex-replication.
 
 ![changes-replication](images/kc-ex-replicate.png)
 
-This is a ready to be used project that bootstraps GridGain and Kafka Connect clusters with GridGain WebConsole in Docker.
+It is ready to be used project that bootstraps GridGain and Kafka Connect clusters with GridGain WebConsole in Docker.
 Just follow the instructions below to get the demo working.
 
 ## Prerequisites
 
-Install Docker if it's installed in your environment yet: https://www.docker.com/get-started
+Install Docker if it's not installed in your environment yet: https://www.docker.com/get-started
 
 ## Start GridGain, Kafka and WebConsole in Docker
 
@@ -61,6 +61,8 @@ this GitHub project:
 ![sql-page](images/sql_page.png)
 
 Go back to the monitoring screen and check the caches are no longer empty.
+
+![caches-monitoring](images/caches_monitoring.png)
 
 ## Check That Changes Were Replicated
 
